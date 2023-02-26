@@ -1,5 +1,18 @@
 @charset "utf-8";
 /* CSS Document */
+:root{
+	--bg-gradient: linear-gradient(45deg,red, blue);
+	--bg-old-color: #312020;
+	--bg-cute: #A770EF;  /* fallback for old browsers */
+	--bg-cute: -webkit-linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);  /* Chrome 10-25, Safari 5.1-6 */
+	--bg-cute: linear-gradient(to left, #FDB99B, #CF8BF3, #A770EF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	
+	--bg-atlas: linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	--bg-jupiter: linear-gradient(to left, #ffd89b, #19547b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	--bg-morning: linear-gradient(45deg, #ff5f6d, #ffc371); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
 
 html{
 	height: 100dvh;
@@ -8,31 +21,34 @@ html{
 body{
 	margin: 0;
 	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
-	background-color: #312020;
+	background: var(--bg-morning);
 	color: azure;
+	display: grid;
 }
+
+/* Navigation Stuff */
 nav{
-	background-color: #5B1B1B;
+	/* background-color: #5B1B1B; */
 	padding-right: 1em;
 	font-size: 2rem;
+	backdrop-filter: brightness(60%);
 
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 
 }
-
 #nav-links{
 	width: 30%;
 	display: flex;
 	justify-content: space-evenly;
 	list-style: none;
 }
-
 a[active-site="true"]{
 	color:#FF931E;
 	border: solid .5rem #FF931E;
-	padding: 1rem 0;
+	border-radius: 1rem;
+	padding: 1rem .125rem;
 }
 
 
@@ -45,17 +61,38 @@ a[active-site="true"]{
 
 	/* unvisited link */
 a:link {
-	color: red;
+	color: white;
 	text-decoration: none;
 }
 /* visited link */
 a:visited {
-	color:red;
+	color:white;
 }
 /* mouse over link */
 a:hover {
 	color: #FF931E;
 }
+
+
+/* Frontpage stuff */
+.introduce-me{
+	cursor:wait;
+	justify-self: center;
+	width: 40vw;
+	margin-top: 10rem;
+	border: solid 1px #ffffff;
+	border-radius: 1rem;
+	background: rgba(0, 0, 0, 0.1);
+	filter: blur(.25em);
+
+	display: grid;
+	justify-content: center;
+	text-align: center;
+}
+.introduce-me:hover{
+	filter:blur(0);
+}
+
 
 
 button{
