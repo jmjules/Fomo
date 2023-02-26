@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<style>
+	body{
+		background-color: #312020;}
+</style>
+<head>
+<meta charset="utf-8">
+<title>FoggyMotion[FOMO]</title>
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<nav>
+		<a href="../index.html"><img src="../Media/logo2.svg" height="150px" alt="FoMo logo"></a>
+		<ul id="nav-links">
+			<li><a href="../sites/apps.html" active-site="true">Apps</a></li>
+			<li><a href="../sites/2d art.html" >2D Art</a></li>
+			<li><a href="../sites/ProgLog.html" >ProgressLog</a></li>
+		</ul>
+	</nav>
+
+	<br><br>
+	<div id="Inhalt">
+		<h3>Calcy Dalky</h3>
+		X: <input id="x" type="text"><br>
+		Y: <input id="y" type="text"><br><br>
+		<button onclick="Calculate('*')">Multiply</button>
+		<button onclick="Calculate('/')">Divide</button>
+		<button onclick="Calculate('+')">Add</button>
+		<button onclick="Calculate('-')">Subtract</button>
+		<br>out: <input id="c_result" type="text">
+		<br>
+--------------------------------------------------------------------------<br>
+		<h3>Rock Paper Scissors</h3>
+		Score: <span id="rps_score">0</span><br><br>
+		<button id="rock" onClick="RockPaperScissors(1)">Rock(1)</button><br>
+		<button id="paper" onClick="RockPaperScissors(2)">Paper(2)</button><br>
+		<button id="scissors" onClick="RockPaperScissors(3)">Scissors(3)</button><br><br>
+		<p id="rps_bot"></p>
+		<p id="rps_msg"></p>
+		<br>
+--------------------------------------------------------------------------<br>
+		<h3>Black Jack</h3>	
+--------------------------------------------------------------------------<br>
+		<h3>Pong</h3>
+		<a href="Canvas.html">Why hello there</a>
+	</div>
+</body>
+
+<script>
+	function Calculate(operator){
+		var resu = 0;
+		if (operator == "*"){		
+			resu = Number(document.getElementById("x").value) * Number(document.getElementById("y").value);
+		} else if (operator == "/"){
+			resu = Number(document.getElementById("x").value) / Number(document.getElementById("y").value);
+		} else if (operator == "+"){
+			resu = Number(document.getElementById("x").value) + Number(document.getElementById("y").value);//would like to simplify if i can find an alternative to eval()(--eval is not safe--)
+		} else if (operator == "-"){
+			resu = Number(document.getElementById("x").value) - Number(document.getElementById("y").value);
+		}
+		document.getElementById("c_result").value = resu;
+	}
+
+	
+//-----------------------------------------------------------------------------
+	let score = 0;
+	
+	function RockPaperScissors (player){
+		//random comp value
+		let comp = Math.floor(Math.random() * 3) + 1; 		
+		
+		//display comp choice
+		if (comp == 1){
+			document.getElementById("rps_bot").innerHTML = "Computer chose: Rock";
+		}else if (comp == 2){
+			document.getElementById("rps_bot").innerHTML = "Computer chose: Paper";
+		} else{
+			document.getElementById("rps_bot").innerHTML = "Computer chose: Scissors";
+		}
+		
+		//result message
+		if (player == comp){
+			document.getElementById("rps_msg").innerHTML = "Draw!";
+		}else if ((player == 1 && comp == 3) || (player == 2 && comp == 1) || (player == 3 && comp == 2) ){
+			document.getElementById("rps_msg").innerHTML = "You Win!";
+			score++;
+		} else{
+			document.getElementById("rps_msg").innerHTML = "You Lose!";
+			score--;
+		}
+		//draw score
+		document.getElementById("rps_score").innerHTML = score;
+		}
+
+	
+//-----------------------------------------------------------------------------
+	
+	function BlackJack(){
+		
+	}
+</script>
+</html>
