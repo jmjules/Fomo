@@ -21,6 +21,28 @@
 		<p>And I am a student</p>
 	</div>
 	
+	<button class="openMe" onclick="console.log('hi')">Pop-Up</button>
+	<div class="heart"></div>
+
+	<dialog class="popup-box">
+		<p>I gotchu man, here's some text Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis sequi consequuntur, aliquam nemo necessitatibus reiciendis amet quas quo deserunt nobis porro voluptatibus. Saepe est voluptatibus similique repellendus, inventore temporibus. Maiores?</p>
+		<button class="closeMe">Close</button>
+	</dialog>
+	
 
 </body>
+<script>
+	const modal = document.querySelector(".popup-box");
+	const openModal = document.querySelector(".openMe");
+	const closeModal = document.querySelector(".closeMe");
+
+	openModal.addEventListener("click", ()=>{
+		modal.showModal();
+	})
+	
+	closeModal.addEventListener("click", ()=>{
+		modal.close();
+	})
+
+</script>
 </html>
