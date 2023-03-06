@@ -99,4 +99,72 @@ button{
 	color: azure;
 	background-color: black;
 }
+button:hover{
+	background: #312020;
+}
+.openMe{
+	justify-self: center;
+	margin-top: 3rem;
+	width: 6rem;
+	cursor: pointer;
+}
+
+.popup-box{
+	margin-top: 30rem;
+	max-width: 50ch;
+	padding: 1rem;
+}
+.popup-box::backdrop{
+	background: rgba(0, 0, 0, 0.7);
+}
+canvas{
+	margin-left: 30vw;
+	margin-top: 7rem;
+}
+
+
+/* ------------------------------Hearto----------------------------- */
+.heart{
+	height: 70px;
+	width: 70px;
+	background: #f20044;
+	justify-self: center;
+	margin-top: 5rem;
+	position: relative;
+	transform: rotate(-45deg);
+}
+.heart:hover{
+	animation: heart 0.6s linear infinite;
+}
+@keyframes heart {
+	0%{
+		transform: rotate(-45deg) scale(1.07);
+	}
+	80%{
+		transform: rotate(-45deg) scale(1.0);
+	}
+	100%{
+		transform: rotate(-45deg) scale(0.8);
+	}
+}
+.heart:before{
+	content: "";
+	position: absolute;
+	height: 70px;
+	width: 70px;
+	background: #f20044;
+	top: -50%;
+	border-radius: 50px;
+	box-shadow: -10px 10px 90px #f20044;
+}
+.heart:after{
+	content: "";
+	position: absolute;
+	height: 70px;
+	width: 70px;
+	background: #f20044;
+	right: -50%;
+	border-radius: 50px;
+}
+/* ---------------Hearto------------------- */
 
